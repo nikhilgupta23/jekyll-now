@@ -39,13 +39,15 @@ I think that this is an inefficient way of solving it. I will post a better solu
 The complete solution-
 
 ``` Java
-public class Solution {
-	public ArrayList<ArrayList<Integer>> subsets(ArrayList<Integer> a) {
+public class Solution 
+{
+	public ArrayList<ArrayList<Integer>> subsets(ArrayList<Integer> a)
+	{
 	    Collections.sort(a);
-	    ArrayList<ArrayList<Integer>> ans =new ArrayList<ArrayList<Integer>>();
+	    ArrayList<ArrayList<Integer>> ans = new ArrayList<ArrayList<Integer>>();
 	    for(int x=0;x<Math.pow(2,a.size());x++)
 	    {
-	        ArrayList<Integer> toadd=new ArrayList<Integer>();
+	        ArrayList<Integer> toadd = new ArrayList<Integer>();
 	        int count=0;
 	        int r=x;
 	        while(r!=0)
@@ -58,19 +60,22 @@ public class Solution {
 	        }
 	        ans.add(toadd);
 	    }
-	    Collections.sort(ans,new Comparator<ArrayList<Integer>> () {
-        @Override
-        public int compare(ArrayList<Integer> a, ArrayList<Integer> b) {
-          int ai=0,bi=0;
-          while(ai!=a.size() && bi!=b.size())
-          {
-              if(a.get(ai)!=b.get(bi))
-                  return a.get(ai)>b.get(bi)?1:a.get(ai)==b.get(bi)?0:-1;
-              ai++;bi++;
-          }
-          return a.size()<=b.size()?-1:1;
-        }});
-	    return ans;
+	    Collections.sort(ans,new Comparator<ArrayList<Integer>> () 
+	    {
+	        @Override
+	        public int compare(ArrayList<Integer> a, ArrayList<Integer> b) 
+	        {
+	          int ai=0,bi=0;
+	          while(ai!=a.size() && bi!=b.size())
+	          {
+	              if(a.get(ai)!=b.get(bi))
+	                  return a.get(ai)>b.get(bi)?1:a.get(ai)==b.get(bi)?0:-1;
+	              ai++;bi++;
+	          }
+	          return a.size()<=b.size()?-1:1;
+	        }
+	   });
+	   return ans;
 	}	
 }
 ```
