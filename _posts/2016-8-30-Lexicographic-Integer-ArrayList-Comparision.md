@@ -22,9 +22,11 @@ Here is how I dealt with the problem-
 2. After getting the output list of lists, using the above method, I had to pass a Comparator object with a method to compare two ArrayLists in a lexicographic manner.
 
 ``` Java
- Collections.sort(ans,new Comparator<ArrayList<Integer>> () {
+Collections.sort(ans,new Comparator<ArrayList<Integer>> () 
+{
       @Override
-      public int compare(ArrayList<Integer> a, ArrayList<Integer> b) {
+      public int compare(ArrayList<Integer> a, ArrayList<Integer> b) 
+      {
         int ai=0,bi=0;
         while(ai!=a.size() && bi!=b.size())
         {
@@ -32,7 +34,8 @@ Here is how I dealt with the problem-
                 return a.get(ai)>b.get(bi)?1:a.get(ai)==b.get(bi)?0:-1;
             ai++;bi++;
         }
-      }});
+      }
+});
 ```
 I think that this is an inefficient way of solving it. I will post a better solution if I find it.
 
@@ -83,9 +86,10 @@ public class Solution
 __Update__
 
 Another code snippet I found online doing the same thing. It's just more elegant.
+
 ``` Java
-    Collections.sort(res, new Comparator<ArrayList<Integer>>() 
-    {
+Collections.sort(res, new Comparator<ArrayList<Integer>>() 
+{
         @Override
         public int compare(ArrayList<Integer> a, ArrayList<Integer> b) 
         {
@@ -97,6 +101,6 @@ Another code snippet I found online doing the same thing. It's just more elegant
                     return cmp;
             }
             return Integer.compare(a.size(), b.size());
-        }
-    });
+	}	
+});
 ```
