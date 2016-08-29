@@ -79,3 +79,24 @@ public class Solution
 	}	
 }
 ```
+---
+__Update__
+
+Another code snippet I found online doing the same thing. It's just more elegant.
+``` Java
+    Collections.sort(res, new Comparator<ArrayList<Integer>>() 
+    {
+        @Override
+        public int compare(ArrayList<Integer> a, ArrayList<Integer> b) 
+        {
+            int an = a.size();
+            int bn = b.size();
+            for (int i = 0; i < Math.min(an, bn); i++) {
+                int cmp = Integer.compare(a.get(i), b.get(i));
+                if (cmp != 0)
+                    return cmp;
+            }
+            return Integer.compare(a.size(), b.size());
+        }
+    });
+```
