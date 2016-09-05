@@ -4,12 +4,9 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
-
-### More Information
-
-A place to include any other types of information that you'd like to include about yourself.
+I am a full-time student pursuing an undergraduate course in Information Technology at Manipal Institute of Technology.
+I am interested in Algorithms, Data Mining, Data Analysis, Embedded System Design and App Development.
 
 ### Contact me
-
-[email@domain.com](mailto:email@domain.com)
+__Nikhil Gupta__  
+[nanonikhil@gmail.com](mailto:email@domain.com)
