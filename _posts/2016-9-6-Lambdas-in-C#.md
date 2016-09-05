@@ -8,9 +8,11 @@ A lambda expression is an anonymous function that you can use to create delegate
 By using lambda expressions, you can write local functions that can be passed as arguments or returned as the value of function calls.
 Lambda expressions are particularly helpful for writing LINQ query expressions.
 
+----
 As an example- _Find the square of a number._
 
-A normal course of action will be-
+A normal course of action using delegates will be-
+
 1. Create a delegate.
 2. Create a function of that delegate type.
 3. Make the call.
@@ -41,6 +43,7 @@ public static void Main(string[] args)
 }
 ```
 Lambdas take it a step further-
+
 ```C#
 delegate int del(int i);
 public static void Main(string[] args)
@@ -52,6 +55,7 @@ public static void Main(string[] args)
 Notice that the data type of _x_ was not provided. It is inferred directly from the delegate _del_.
 Also, the keyword _return_ is not used in the above example. 
 If the function has multiple statements, a body can be created with a _return_ statement.
+
 ```C#
 delegate int del(int i);
 public static void Main(string[] args)
@@ -63,7 +67,20 @@ public static void Main(string[] args)
     int j = myDelegate(5); //j = 25
 }
 ```
-
+----
 This example is really silly but it helps in understanding the basics. 
 Lambdas can prove to be really powerful when used with event-driven programming and with LINQ.
 They make the code shorter and easy to understand.
+
+Finding average of even fibonacci numbers-
+
+```C#
+int[] fibNum = { 1, 1, 2, 3, 5, 8, 13, 21, 34 };
+double averageValue = fibNum.Where(num => num % 2 == 1).Average();
+```
+Getting the names of all the students from a list of students (Assume that the _Student_ class has a _Name_ property).
+
+```C#
+List<Student> students = EnumerateStudents();
+List<string> studentnames = students.Select(student => student.Name).ToList();
+```
